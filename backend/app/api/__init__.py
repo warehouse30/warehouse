@@ -1,0 +1,21 @@
+from fastapi import APIRouter
+from app.api import auth, warehouses, products, stocks, slips, reports, bulk, cycle_counts, pricing, customers, proposals, procurement, notifications, uploads, labels, einvoice, currencies
+
+api_router = APIRouter()
+api_router.include_router(auth.router, prefix="/auth", tags=["auth"])
+api_router.include_router(warehouses.router, prefix="/warehouses", tags=["warehouses"])
+api_router.include_router(products.router, prefix="/products", tags=["products"])
+api_router.include_router(stocks.router, prefix="/stocks", tags=["stocks"])
+api_router.include_router(slips.router, prefix="/slips", tags=["slips"])
+api_router.include_router(reports.router, prefix="/reports", tags=["reports"])
+api_router.include_router(bulk.router, prefix="/bulk", tags=["bulk"])
+api_router.include_router(cycle_counts.router, prefix="/cycle-counts", tags=["cycle-counts"])
+api_router.include_router(pricing.router, prefix="/pricing", tags=["pricing"])
+api_router.include_router(customers.router, prefix="/customers", tags=["customers"])
+api_router.include_router(proposals.router, prefix="/proposals", tags=["proposals"])
+api_router.include_router(procurement.router, prefix="/procurement", tags=["procurement"])
+api_router.include_router(notifications.router, prefix="/notifications", tags=["notifications"])
+api_router.include_router(uploads.router, prefix="/uploads", tags=["uploads"])
+api_router.include_router(labels.router, prefix="/labels", tags=["labels"])
+api_router.include_router(einvoice.router, prefix="/einvoice", tags=["einvoice"])
+api_router.include_router(currencies.router, prefix="/currencies", tags=["currencies"])
